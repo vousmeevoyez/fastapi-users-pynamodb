@@ -1,6 +1,4 @@
 import uvicorn
-import os
-import shutil
 
 from fastapi_users_pynamodb.settings import settings
 

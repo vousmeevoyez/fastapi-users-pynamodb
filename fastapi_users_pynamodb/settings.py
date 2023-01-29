@@ -1,12 +1,11 @@
 import enum
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Optional
 
 from pydantic import BaseSettings
-from yarl import URL
 
 TEMP_DIR = Path(gettempdir())
+
 
 class LogLevel(str, enum.Enum):  # noqa: WPS600
     """Possible log levels."""
@@ -38,8 +37,6 @@ class Settings(BaseSettings):
     environment: str = "dev"
 
     log_level: LogLevel = LogLevel.INFO
-
-    
 
     class Config:
         env_file = ".env"

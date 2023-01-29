@@ -17,6 +17,7 @@ jobs:
           POETRY_VIRTUALENVS_CREATE: false
       - name: Run black check
         run: poetry run black --check .
+
   flake8:
     runs-on: ubuntu-latest
     steps:
@@ -45,6 +46,7 @@ jobs:
           POETRY_VIRTUALENVS_CREATE: false
       - name: Run mypy check
         run: poetry run mypy .
+
   pytest:
     runs-on: ubuntu-latest
     steps:
@@ -61,4 +63,3 @@ jobs:
         run: poetry run pytest -vv --cov="fastapi_users_pynamodb" .
         env:
           FASTAPI_USERS_PYNAMODB_HOST: "0.0.0.0"
-

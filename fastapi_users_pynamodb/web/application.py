@@ -1,10 +1,13 @@
+from importlib import metadata
+
 from fastapi import FastAPI
 from fastapi.responses import UJSONResponse
-import logging
+
 from fastapi_users_pynamodb.web.api.router import api_router
-from fastapi_users_pynamodb.settings import settings
-from fastapi_users_pynamodb.web.lifetime import register_startup_event, register_shutdown_event
-from importlib import metadata
+from fastapi_users_pynamodb.web.lifetime import (
+    register_shutdown_event,
+    register_startup_event,
+)
 
 
 def get_app() -> FastAPI:

@@ -1,11 +1,11 @@
 from typing import Awaitable, Callable
-import logging
+
 from fastapi import FastAPI
 
-from fastapi_users_pynamodb.settings import settings
 
-
-def register_startup_event(app: FastAPI) -> Callable[[], Awaitable[None]]:  # pragma: no cover
+def register_startup_event(
+    app: FastAPI,
+) -> Callable[[], Awaitable[None]]:  # pragma: no cover
     """
     Actions to run on application startup.
 
@@ -23,7 +23,9 @@ def register_startup_event(app: FastAPI) -> Callable[[], Awaitable[None]]:  # pr
     return _startup
 
 
-def register_shutdown_event(app: FastAPI) -> Callable[[], Awaitable[None]]:  # pragma: no cover
+def register_shutdown_event(
+    app: FastAPI,
+) -> Callable[[], Awaitable[None]]:  # pragma: no cover
     """
     Actions to run on application's shutdown.
 
