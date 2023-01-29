@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+    image: fastapi_users_pynamodb:${FASTAPI_USERS_PYNAMODB_VERSION:-latest}
+    restart: always
+    env_file:
+      - .env
+    environment:
+      FASTAPI_USERS_PYNAMODB_HOST: 0.0.0.0
+
+
